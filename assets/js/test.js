@@ -19,27 +19,27 @@ var aantalBitterballen16 = 0;
 
 while(true){
     var order = prompt("Welke bestelling wilt u toevoegen? \nU kunt kiezen uit: \nFris\nBier\nWijn\nSnack");
-    if(order == 'fris'){
+    if(order == 'fris' || order == "Fris"){
         aantalFris = prompt('Hoeveel fris wilt u toevoegen aan uw bestelling?');
-        totaal = totaal + fris * aantalFris;
+        orderFris();
     }
-    else if (order == 'bier'){
+    else if (order == 'bier' || order == "Bier"){
         aantalBier = prompt('Hoeveel bier wilt u toevoegen aan uw bestelling?');
-        totaal = totaal + bier * aantalBier;
+        orderBier();
     }
-    else if(order == 'wijn'){
+    else if(order == 'wijn' || order == "Wijn"){
         aantalWijn = prompt('Hoeveel wijn wilt u toevoegen aan uw bestelling?');
-        totaal = totaal + wijn * aantalWijn;
+        orderWijn();
     }
-    else if(order == 'snack'){
+    else if(order == 'snack' || order == "Snack"){
         var orderBitterballen = prompt('Hoeveel bitterballen wilt u toevoegen?\nKies uit 8 of 16 stuks.');
         if (orderBitterballen == 8){
             aantalBitterballen8 = prompt('Hoeveel bitterbalschalen van 8 stuks wilt u bestellen?');
-            totaal = totaal + bitterballen8 * aantalBitterballen8;
+            orderBitter8();
         }
         else if(orderBitterballen == 16){
             aantalBitterballen16 = prompt('Hoeveel bitterbalschalen van 16 stuks wilt u bestellen?');
-            totaal = totaal + bitterballen16 * aantalBitterballen16;
+            orderBitter16();
         }
         else{
             alert('U kunt alleen een keuze maken tussen 8 en 16. De snacks zijn niet toegevoegd aan de bestelling.')
@@ -54,6 +54,28 @@ while(true){
     }
 }
 
+function orderFris(){
+    totaal = totaal + fris * aantalFris;
+    return totaal;
+}
+function orderBier(){
+    totaal = totaal + bier * aantalBier;
+    return totaal;
+}
+
+function orderWijn(){
+    totaal = totaal + wijn * aantalWijn;
+    return totaal;
+}
+
+function orderBitter8(){
+    totaal = totaal + bitterballen8 * aantalBitterballen8;
+    return totaal;
+}
+function orderBitter16(){
+    totaal = totaal + bitterballen16 * aantalBitterballen16;
+    return totaal;
+}
 
 alert('Het totaal wordt: €' + totaal.toFixed(2))
 
