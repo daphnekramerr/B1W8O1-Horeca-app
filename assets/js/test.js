@@ -95,9 +95,6 @@ function bestelling(){
 
 
     function receiptBuilder(){
-        var count = Object.values(aantal.aantalFris).length;
-        console.log(count)
-        console.log(Object.values(aantal));
 
         var htmlBuilder = "<h1> JOUW BESTELLING</h1>";
         htmlBuilder +=  "<hr>";
